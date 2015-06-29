@@ -4,15 +4,23 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  
-          root 'welcome#index'
 
-          resources :welcome do
-            collection do
-              get 'demo'
-            end
-          end
-        
+  arrayMap = (1..6).map { |x| %Q(get 'index#{x}'\n)}
+  arrayMapReduce = arrayMap.reduce { |x,y| x+y }
+
+  resources :welcome do
+    collection do
+      get 'demo'
+      eval(arrayMapReduce)
+    end
+  end
+
+  resources :items, only: [:show, :index] do
+    collection do
+      match 'search' => 'items#search', via: [:get, :post], as: :search
+    end
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

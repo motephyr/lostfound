@@ -1,0 +1,27 @@
+table.table.table-striped.table-hover
+  thead
+    tr
+      th 物品名稱
+      th 遺失地點
+      th 遺失時間
+      th 圖片
+      th 備註
+      th 來源
+      th 來源網站
+      th 來源網址
+  tbody
+    -if @items.present?
+      - @items.each do |item|
+        tr
+          td =item.name
+          td =item.place
+          td =item.found_time
+          td
+            img src= item.image
+          td =item.remark
+          td =item.source
+          td =item.source_site
+          td =item.source_url
+
+
+

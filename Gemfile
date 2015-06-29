@@ -21,6 +21,8 @@ gem "auto-facebook", git: 'https://github.com/motephyr/auto-facebook.git'
 gem 'carrierwave'
 gem "mini_magick"
 
+gem 'ransack'
+
 group :production do
   gem 'rails_12factor'
   gem "non-stupid-digest-assets"
