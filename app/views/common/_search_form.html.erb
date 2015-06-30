@@ -1,6 +1,35 @@
+<% content_for :stylesheets do %>
+<%= stylesheet_link_tag "datetimepicker/jquery.datetimepicker" %>
+<% end %>
 
-  <%= search_form_for @q,url: search_items_path, :class => "navbar-form navbar-left", :method => :get do |f| %>
-  <span class="glyphicon glyphicon-search"></span>
-  <%= f.search_field :name_or_place_cont, class: "form-control" %>
+<% content_for :javascripts do %>
 
-  <% end %>
+<%= javascript_include_tag "datetimepicker/jquery.datetimepicker" %>
+<script>
+  $(function() {
+    var time_option = {
+      timepicker:false,
+      defaultDate:new Date(),
+      format: 'Y-m-d',
+      lang: 'zh-TW'
+    };
+    $('#q_found_time').datetimepicker(time_option);
+  });
+</script>
+<% end %>
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<%= simple_form_for @q, url: search_items_path, :method => :get do |f| %>
+<%= content_tag("label","物品名稱",style: "font-size:16px") %>
+<%= f.search_field :name_cont, class: "form-control" %>
+<%= content_tag("label","遺失日期",style: "font-size:16px") %>
+<%= f.input_field :found_time, as: :date_time_picker %>
+<%= content_tag("label","遺失地點",style: "font-size:16px") %>
+<%= f.search_field :place_cont, class: "form-control" %>
+<%= f.button :button , '開始搜尋' %>
+<% end %>
+</div>
+<div class="col-md-4"></div>
+
+</div>

@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+  %w(
+    datetimepicker
+  ).each do |asset_source|
+    gem "rails-assets-#{asset_source}"
+  end
+end
 
 gem "auto_build", :path => "~/Projects/Ruby/auto_build"
 
@@ -39,7 +46,7 @@ group :development do
   gem "binding_of_caller"
   gem "better_errors", "~> 0.9.0"
 
-  gem "pry-stack_explorer"
+  #gem "pry-stack_explorer"
   #gem "pry-byebug"
   gem "pry-rescue"
   gem "pry-doc"
@@ -57,7 +64,6 @@ group :test do
   gem 'rspec-rails', '~> 2.14.1'
   gem 'rails_best_practices'
 end
-
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

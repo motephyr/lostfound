@@ -4,10 +4,10 @@ javascript:
   });
 
 
-= link_to "開始搜尋", search_items_path, class: "btn btn-info"
+= render :partial => "common/search_form"
+
 -if @items.present?
-  h2 收錄從2014 年 01 月 19 日遺失物資料計 51839 筆
-  h2 列出 #{@items.size} 筆最新的結果
+  h2 = "共 #{@items.size} 筆結果"
   table.table.table-striped.table-hover
     thead
       tr
@@ -19,11 +19,13 @@ javascript:
         - @items.each do |item|
           = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網站：</li><ul><li>#{item.source_site}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}'>連結</a></li></ul>"})
           td
-            h4 =item.name
+            h4 = item.name
           td
-            h4 =item.place
+            h4 = item.place
           td
-            h4 =item.found_time.strftime('%Y 年 %m 月 %d 日')
+            h4 = item.found_time.strftime('%Y 年 %m 月 %d 日')
+
+
 
 
 
