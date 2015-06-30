@@ -13,11 +13,6 @@ GIT
       omniauth-facebook
       rails (>= 4.0.0)
 
-PATH
-  remote: ~/Projects/Ruby/auto_build
-  specs:
-    auto_build (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -70,6 +65,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-material-design (0.2.1)
+      bootstrap-sass (~> 3.0)
     bootstrap-sass (3.3.5)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -475,11 +472,11 @@ PLATFORMS
 
 DEPENDENCIES
   auto-facebook!
-  auto_build!
   autoprefixer-rails
   awesome_print
   better_errors (~> 0.9.0)
   binding_of_caller
+  bootstrap-material-design
   bootstrap-sass (~> 3.3.4)
   bootstrap_helper (>= 4.2.2.1)
   byebug

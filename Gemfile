@@ -7,8 +7,6 @@ source 'https://rails-assets.org' do
   end
 end
 
-gem "auto_build", :path => "~/Projects/Ruby/auto_build"
-
 gem "settingslogic"
 gem 'bootstrap-sass', '~> 3.3.4'
 gem "bootstrap_helper", ">= 4.2.2.1"
@@ -29,6 +27,7 @@ gem 'carrierwave'
 gem "mini_magick"
 
 gem 'ransack'
+gem 'bootstrap-material-design'
 
 group :production do
   gem 'rails_12factor'

@@ -1,0 +1,9 @@
+/* line 1, /Users/motephyr/Projects/Ruby/found_20150625/app/assets/stylesheets/sass/_alerts.scss */
+.alert {
+  border: 0px;
+  border-radius: 0;
+}
+/* line 4, /Users/motephyr/Projects/Ruby/found_20150625/app/assets/stylesheets/sass/_alerts.scss */
+.alert a, .alert .alert-link {
+  color: #FFFFFF;
+}

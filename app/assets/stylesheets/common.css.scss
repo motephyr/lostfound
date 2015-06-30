@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap-setting";
 @import "bootstrap";
-@import "sass/material";
+@import "bootstrap-material-design";
 
 /*必加語法*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote {
@@ -46,6 +46,6 @@ body {
 h1, h2, h3, h4, h5, h6, p { color:#231815; letter-spacing:1px; font-family:"nimbus-sans","xingothic-tc-w4","微軟正黑體","Microsoft JhengHei",sans-serif;}
 p{ font-size:15px; _font-size:14px; line-height:24px;}
 
-.navbar-inverse {
+.navbar-inverse.navbar {
     background-color: #17baef;
 }
