@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <meta name="google-site-verification" content="YyegJu17j_pD7oCTI2Zk4N9eLcTQFh-CcWVQqueIXao" />
   <% if @og.present? %>
-    <%= render "common/og_tag" %>
+  <%= render "common/og_tag" %>
   <% end %>
 
   <%= stylesheet_link_tag "application", media: "all" %>
@@ -21,12 +21,17 @@
 </head>
 <%= render_body_tag %>
 <%= render :partial => "common/menu" %>
-<div class="container">
+<% if params[:controller] == "welcome" && params[:action] == "index" %>
   <%= notice_message %>
-
   <%= yield %>
   <%= render :partial => "common/footer" %>
-</div>
+<% else %>
+  <div class="container">
+    <%= notice_message %>
+    <%= yield %>
+    <%= render :partial => "common/footer" %>
+  </div>
+<% end %>
 
 
 <%= render :partial => "common/facebook_js" %>

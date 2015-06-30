@@ -1,6 +1,6 @@
 defaults: &defaults
-  app_name: "7funs"
-  domain: "http://www.7funs.com/"
+  app_name: "失物招領"
+  domain: "http://getlost.herokuapp.com/"
   facebook_admins: "1711272827"
   facebook_app_id: "665096563622904"
   facebook_secret: "77f420dfdd9fd7707287b2c2c0f1b49f"

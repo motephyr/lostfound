@@ -1,7 +1,29 @@
-      <div class="jumbotron">
-        <h1>Book Store</h1>
-        <p>交換書的地方，把你放置已久的書放上來吧！</p>
-        <p>
-          <%= link_to "看看書 ","#" ,:class => "btn btn-primary btn-lg" %>
-        </p>
-      </div>
+<% content_for :stylesheets do %>
+<%= stylesheet_link_tag "styles" %>
+<% end %>
+
+<section id="promo" class="promo section offset-header">
+    <div class="container text-center">
+        <h2 class="title">失物<span class="highlight">招領</span></h2>
+        <p class="intro">找回那些你曾經擁有過的東西</p>
+        <div class="btns">
+        <a class="btn btn-cta-secondary" href="welcome/index1">開始找尋</a>
+        </div>
+        <div class="meta">
+        </ul><!--//meta-->
+    </div><!--//container-->
+</section><!--//promo-->
+
+<!-- ******FEATURES****** -->
+<section id="features" class="features section">
+    <div class="container text-center">
+        <h2 class="title">特徵</h2>
+        <ul class="feature-list list-unstyled">
+            <li><i class="fa fa-check"></i> 收集各大網站遺失物公開資料庫</li>
+            <li><i class="fa fa-check"></i> 透過比對<h3 style="color:red;display:inline">遺失時間 地點</h3>協助搜尋</li>
+            <li><i class="fa fa-check"></i> 留下你的聯絡方式，如果以後比對到類似的東西，也可以通知您</li>
+            <li><i class="fa"></i> </li>
+            <li><i class="fa"></i> </li>
+        </ul>
+    </div><!--//container-->
+    </section><!--//features-->

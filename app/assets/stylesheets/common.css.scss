@@ -39,9 +39,13 @@ body {
   background-attachment: initial;
   background-origin: initial;
   background-clip: initial;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 /*===================共用=================*/
 h1, h2, h3, h4, h5, h6, p { color:#231815; letter-spacing:1px; font-family:"nimbus-sans","xingothic-tc-w4","微軟正黑體","Microsoft JhengHei",sans-serif;}
 p{ font-size:15px; _font-size:14px; line-height:24px;}
+
+.navbar-inverse {
+    background-color: #17baef;
+}
