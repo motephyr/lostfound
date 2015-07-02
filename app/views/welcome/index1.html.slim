@@ -18,7 +18,10 @@ javascript:
     tbody
       -if @items.present?
         - @items.each do |item|
-          = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}' target='_blank'>連結</a></li></ul>"})
+          - if item.source_url.present?
+            = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}' target='_blank'>連結</a></li></ul>"})
+          - else
+            = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul>"})
           td
             h4 =item.name
           td
