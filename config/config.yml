@@ -1,6 +1,6 @@
 defaults: &defaults
   app_name: "失物招領"
-  domain: "http://findlost.herokuapp.com/"
+  domain: "http://findlost.herokuapp.com"
   facebook_admins: "1711272827"
   facebook_app_id: "1452572665045136"
   facebook_secret: "11e2e1868db4cc73c4152528811fee60"

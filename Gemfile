@@ -21,7 +21,7 @@ gem 'devise-i18n-bootstrap'
 gem 'devise-token_authenticatable'
 gem "omniauth"
 gem "omniauth-facebook"
-gem "auto-facebook", git: 'https://github.com/motephyr/auto-facebook.git'
+gem "auto-facebook"
 
 gem 'carrierwave'
 gem "mini_magick"
