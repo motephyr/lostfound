@@ -1,0 +1,37 @@
+javascript:
+  $(function(){
+    $("[data-toggle=popover]").popover({trigger: "hover",delay: 1500});
+  });
+
+
+= render :partial => "common/search_form"
+
+-if @items.present?
+  h2 = "共 #{@items.size} 筆結果"
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th width="30%" 物品名稱
+        th width="40%" 遺失地點
+        th width="20%" 遺失時間
+        th width="10%" 來源網站
+    tbody
+      -if @items.present?
+        - @items.each do |item|
+          = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}'>連結</a></li></ul>"})
+          td
+            h4 = item.name
+          td
+            h4 = item.place
+          td
+            h4 = item.found_time.strftime('%Y 年 %m 月 %d 日')
+          td
+            h4 = item.source_site
+-else
+ div.container.text-center
+   h2 資料庫內無任何遺失物資料，請修改搜尋條件(如'手機'修改為'行動電話'等)
+
+
+
+
+

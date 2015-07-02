@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  def search
+  def index
     @items = show_items(params)
   end
 

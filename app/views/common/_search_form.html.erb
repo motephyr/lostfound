@@ -23,7 +23,7 @@
 <div class="col-md-4"></div>
 <div class="col-md-4">
 <h2>輸入您想尋找的物品</h2>
-<%= simple_form_for @q, url: search_items_path, :method => :get do |f| %>
+<%= simple_form_for @q, url: items_path, :method => :get do |f| %>
 <%= content_tag("label","物品名稱",style: "font-size:16px") %>
 <%= f.search_field :name_cont, class: "form-control" %>
 <%= content_tag("label","遺失日期",style: "font-size:16px") %><%= content_tag("p","(尋找選擇之日期前後一個禮拜)",style: "font-size:12px") %>
