@@ -7,7 +7,10 @@ javascript:
 = render :partial => "common/search_form"
 
 -if @items.present?
-  h2 = "共 #{@items.size} 筆結果"
+  -if @items.size < 1000
+    h2 = "共 #{@items.size} 筆結果"
+  -else
+    h2 搜尋筆數過多，列出最近的1000筆資料
   table.table.table-striped.table-hover
     thead
       tr
