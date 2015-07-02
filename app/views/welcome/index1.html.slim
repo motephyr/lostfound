@@ -1,6 +1,6 @@
 javascript:
   $(function(){
-    $("[data-toggle=popover]").popover({trigger: "hover",delay: 1500});
+    $("[data-toggle=popover]").popover({trigger: "click"});
   });
 
 
@@ -11,17 +11,15 @@ javascript:
   table.table.table-striped.table-hover
     thead
       tr
-        th width="30%" 物品名稱
+        th width="25%" 物品名稱
         th width="40%" 遺失地點
-        th width="20%" 遺失時間
-        th width="10%" 來源網站
+        th width="17%" 遺失時間
+        th width="13%" 來源網站
+        th width="5%"
     tbody
       -if @items.present?
         - @items.each do |item|
-          - if item.source_url.present?
-            = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}' target='_blank'>連結</a></li></ul>"})
-          - else
-            = tag("tr", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul>"})
+          tr
           td
             h4 =item.name
           td
@@ -30,6 +28,11 @@ javascript:
             h4 =item.found_time.strftime('%Y 年 %m 月 %d 日')
           td
             h4 = item.source_site
+          td
+            - if item.source_url.present?
+              = content_tag("a", "More", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul><li>來源網址：</li><ul><li><a href='#{item.source_url}' target='_blank'>連結</a></li></ul>"})
+            - else
+              = content_tag("a", "More", :data => {toggle: "popover",placement: "auto", html: true, content: "#{image_tag(item.image)}<br /><li>備註：</li><ul><li>#{item.remark}</li></ul><li>來源：</li><ul><li>#{item.source}</li></ul>"})
 = link_to "開始搜尋", search_items_path, class: "btn btn-info"
 
 
