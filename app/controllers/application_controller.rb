@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     if params[:q].present? && params[:q]["found_time"].present?
       search_time = params[:q]["found_time"]
       params[:q]["found_time_gteq"] = (search_time.to_date-3).to_s
-      params[:q]["found_time_lteq"] = (search_time.to_date+3).to_s
+      params[:q]["found_time_lteq"] = (search_time.to_date+7).to_s
     end
     @q = Item.ransack(params[:q])
   end

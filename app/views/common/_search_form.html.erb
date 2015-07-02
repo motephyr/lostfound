@@ -10,6 +10,8 @@
     var time_option = {
       timepicker:false,
       defaultDate:new Date(),
+      maxDate: new Date(),
+      minDate: '2014/01/19',
       format: 'Y-m-d',
       lang: 'zh-TW'
     };
@@ -20,14 +22,13 @@
 <div class="row">
 <div class="col-md-4"></div>
 <div class="col-md-4">
+<h2>輸入您想尋找的物品</h2>
 <%= simple_form_for @q, url: search_items_path, :method => :get do |f| %>
 <%= content_tag("label","物品名稱",style: "font-size:16px") %>
 <%= f.search_field :name_cont, class: "form-control" %>
-<%= content_tag("label","遺失日期",style: "font-size:16px") %>
+<%= content_tag("label","遺失日期",style: "font-size:16px") %><%= content_tag("p","(尋找選擇之日期前後一個禮拜)",style: "font-size:12px") %>
 <%= f.input_field :found_time, as: :date_time_picker %>
-<%= content_tag("label","遺失地點",style: "font-size:16px") %>
-<%= f.search_field :place_cont, class: "form-control" %>
-<%= f.button :button , '開始搜尋' %>
+<%= f.button :button , '開始搜尋',class: "btn-success" %>
 <% end %>
 </div>
 <div class="col-md-4"></div>

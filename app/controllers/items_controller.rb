@@ -6,10 +6,9 @@ class ItemsController < ApplicationController
 
   private
   def show_items(params)
-    if params[:q].present? && (params[:q]["found_time"].present? || params[:q]["place_cont"].present?)
+    if params[:q].present? && (params[:q]["name_cont"].present?)
       @q.result(distinct: true).order('found_time desc')
     else
-      flash[:warning] = "日期和地點須擇一填寫"
       render :search
     end
   end
