@@ -1,10 +1,10 @@
 defaults: &defaults
   app_name: "失物招領"
-  domain: "http://getlost.herokuapp.com/"
+  domain: "http://findlost.herokuapp.com/"
   facebook_admins: "1711272827"
-  facebook_app_id: "665096563622904"
-  facebook_secret: "77f420dfdd9fd7707287b2c2c0f1b49f"
-  default_logo_url: "/logo.png"
+  facebook_app_id: "1452572665045136"
+  facebook_secret: "11e2e1868db4cc73c4152528811fee60"
+  default_logo_url: "/favicon.ico"
   GOOGLE_STORAGE_KEY: "GOOGIL6BIT22WPWW57YW"
   GOOGLE_STORAGE_SECRET: "xcS1QexjnRV8TXoBmDjJyIQ+tym5m6IKoKsV8Zxw"
   GOOGLE_STORAGE_BUCKET_NAME: "funs7-1"
@@ -12,7 +12,7 @@ defaults: &defaults
   mandrill_smtp_password: "cX_r3UcjRFxb7dTOtN5Q-g"
   parse_app_id: "nC53MYnRGSGc0PmHnwb7tueO71JZh0lhLhFZ6m7l"
   parse_api_key: "z7TZii0myJKnJ7jFUcTlcuKCfr2EsYaJHrN3o4Qe"
-  google_analytics_key: "UA-64352580-1"
+  google_analytics_key: "UA-64352580-2"
 
 development:
   <<: *defaults
