@@ -23,7 +23,9 @@
 <%= render :partial => "common/google_analytics" %>
 <%= render :partial => "common/menu" %>
 <% if params[:controller] == "welcome" && params[:action] == "index" %>
-  <%= notice_message %>
+  <div class="container" style="padding-top:50px">
+    <%= notice_message %>
+  </div>
   <%= yield %>
   <%= render :partial => "common/footer" %>
 <% else %>
